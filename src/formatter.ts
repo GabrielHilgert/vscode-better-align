@@ -181,6 +181,8 @@ export class Formatter {
                     next === '*')
             ) {
                 currTokenType = TokenType.Comment;
+            } else if (char === '#') {
+                currTokenType = TokenType.Comment;
             } else if (char === ',') {
                 if (lt.tokens.length === 0 || (lt.tokens.length === 1 && lt.tokens[0].type === TokenType.Whitespace)) {
                     currTokenType = TokenType.CommaAsWord; // Comma-first style
